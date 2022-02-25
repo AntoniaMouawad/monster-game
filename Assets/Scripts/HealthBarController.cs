@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 using UnityEngine.SceneManagement;
 
 public class HealthBarController : MonoBehaviour
@@ -9,6 +10,7 @@ public class HealthBarController : MonoBehaviour
     private Slider slider;
     public Player player;
     private float currentHealth = 100;
+    public static event Action isDead;
 
     private void Awake()
     {
@@ -36,9 +38,7 @@ public class HealthBarController : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, slider.minValue, slider.maxValue);
         slider.value = currentHealth;
         if (currentHealth == 0)
-        {
             SceneManager.LoadScene("GameOver");
-        }
     }
 
     public void Heal()

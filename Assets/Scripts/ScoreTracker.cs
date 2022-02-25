@@ -5,12 +5,27 @@ using TMPro;
 
 public class ScoreTracker : MonoBehaviour
 {
+    public static ScoreTracker instance;
     private TextMeshProUGUI score;
     private float timer;
-    private int curScore;
+    private int _curScore;
+    public int CurScore
+    {
+        get { return _curScore; }
+        set { _curScore = value; }
+    }
     // Start is called before the first frame update
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         score = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
         updateScore(0);
 
@@ -27,8 +42,8 @@ public class ScoreTracker : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > 3f)
         {
-            curScore += 1;
-            updateScore(curScore);
+            CurScore += 1;
+            updateScore(CurScore);
             timer = 0;
         }
         
