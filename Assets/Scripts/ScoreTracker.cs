@@ -40,6 +40,7 @@ public class ScoreTracker : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        Debug.Log(timer);
         if (timer > 3f)
         {
             CurScore += 1;

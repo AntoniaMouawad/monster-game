@@ -16,5 +16,6 @@ public class GameOverScorer : MonoBehaviour
     {
         currentScore = ScoreTracker.instance.CurScore;
         finalScore.text = "Final Score: " + currentScore;
+        Destroy(GameObject.FindGameObjectWithTag("ScoreTracker"));
     }
 }
