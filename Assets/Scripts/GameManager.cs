@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private int score;
 
     [SerializeField]
     private GameObject[] players;
@@ -47,8 +48,7 @@ public class GameManager : MonoBehaviour
         if (scene.name == "GamePlay")
         {
             Instantiate(players[CharIndex]);
-
-
         }
+
     }
 }

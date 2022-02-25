@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public static event Action collidedWithEnemy;
-    public static event Action isDead;
     public static event Action consumedHeal;
 
     [SerializeField] // to be visible in the inspector pannel while private
