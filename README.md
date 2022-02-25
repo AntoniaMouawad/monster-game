@@ -11,3 +11,4 @@ This repo includes additional features and improvements that I implemented (not 
 - Healing Sprites (heart)
 - Player hits wall (borders of the scene)
 - Score tracking
+- Works on different screen sizes
