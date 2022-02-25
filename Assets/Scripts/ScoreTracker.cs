@@ -7,7 +7,7 @@ public class ScoreTracker : MonoBehaviour
 {
     public static ScoreTracker instance;
     private TextMeshProUGUI score;
-    private float timer;
+    private float timer = 0f;
     private int _curScore;
     public int CurScore
     {
@@ -44,7 +44,7 @@ public class ScoreTracker : MonoBehaviour
         {
             CurScore += 1;
             updateScore(CurScore);
-            timer = 0;
+            timer = 0f;
         }
         
     }
